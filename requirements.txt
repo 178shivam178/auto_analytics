@@ -1,0 +1,6 @@
+openai
+lida
+openpyxl
+pymongo
+streamlit
+streamlit_option_menu

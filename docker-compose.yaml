@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  streamlit-app1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8501:8501"
