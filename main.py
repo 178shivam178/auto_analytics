@@ -14,7 +14,7 @@ from lida import Manager, TextGenerationConfig, llm
 
 def csv_analytics_app():
     try:
-        os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
+        os.environ["OPENAI_API_KEY"] = open_ai
         logger.info("Successfully Set up the Open AI key")
         lida = Manager(text_gen=llm("openai", api_key=None))
         textgen_config = TextGenerationConfig(n=1, temperature=0.5, model=MODEL, use_cache=True)
@@ -53,7 +53,7 @@ def csv_analytics_app():
 
 def excel_analytics_app():
     try:
-        os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
+        os.environ["OPENAI_API_KEY"] = open_ai
         logger.info("Successfully Set up the Open AI key")
         lida = Manager(text_gen=llm("openai", api_key=None))
         textgen_config = TextGenerationConfig(n=1, temperature=0.5, model=MODEL, use_cache=True)
@@ -93,7 +93,7 @@ def excel_analytics_app():
 def db_analytics_app():
     try:
         st.title("DB's Auto Analytics")
-        os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
+        os.environ["OPENAI_API_KEY"] = open_ai
         logger.info("Successfully Set up the Open AI key")
         mongo_uri = st.sidebar.text_input("MongoDB URI")
         mongo_db = st.sidebar.text_input("MongoDB database name")
