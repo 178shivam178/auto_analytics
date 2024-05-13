@@ -6,6 +6,25 @@
     <title>Result</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .card-body {
+            padding: 15px;
+        }
+        .download-btn {
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="container mt-5">
@@ -18,12 +37,11 @@
                 <div class="card">
                     <div class="card-header">
                         {{ chart['goal'] }}
-                        {{ chart['chart_path'] }}
                     </div>
                     <div class="card-body">
-                        <img src="{{ url_for('uploads', filename=chart['chart_path']) }}">
+                        <img src="../{{ chart['chart_path'] }}" class="img-fluid" alt="Chart">
+                        <a href="../{{chart['chart_path'] }}" class="btn btn-primary btn-block download-btn" download>Download Chart</a>
                     </div>
-                    
                 </div>
             </div>
             {% endfor %}

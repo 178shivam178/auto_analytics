@@ -19,7 +19,7 @@ textgen_config = TextGenerationConfig(n=1, temperature=0.5, model=MODEL, use_cac
 
 app = Flask(__name__)
 
-UPLOAD_FOLDER = 'uploads'
+UPLOAD_FOLDER = 'static'
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
