@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        /* Add your custom CSS styles here */
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .card {
+            background-color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .btn {
+            width: 100%;
+        }
+        .or-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .or-text {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Data Analysis Dashboard</h1>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/upload" method="post" enctype="multipart/form-data">
+                            <h4>Upload File</h4>
+                            <div class="form-group">
+                                <label for="file">Choose a file:</label>
+                                <input type="file" class="form-control-file" id="file" name="file">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Upload</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/mongodb" method="post">
+                            <h4>MongoDB URI</h4>
+                            <div class="form-group">
+                                <label for="uri">URI:</label>
+                                <input type="text" class="form-control" id="uri" name="uri" placeholder="mongodb://localhost:27017">
+                            </div>
+                            <div class="form-group">
+                                <label for="db">Database Name:</label>
+                                <input type="text" class="form-control" id="db" name="db" placeholder="mydatabase">
+                            </div>
+                            <div class="form-group">
+                                <label for="collection">Collection Name:</label>
+                                <input type="text" class="form-control" id="collection" name="collection" placeholder="mycollection">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Connect to MongoDB</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <div class="or-container">
+                    <div class="or-text"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

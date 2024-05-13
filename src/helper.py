@@ -32,9 +32,3 @@ def preprocess_dataframe(df, max_columns=50, missing_threshold=30, random_state=
     else:
         processed_df = df
     return processed_df
-
-
-
-
-
-
